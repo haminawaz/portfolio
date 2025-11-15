@@ -36,16 +36,22 @@ export default function Home() {
             Home
           </a>
           <a
+            href="#skills"
+            className="text-sm font-medium hover:text-emerald-500"
+          >
+            Skills
+          </a>
+          <a
+            href="#experience"
+            className="text-sm font-medium hover:text-emerald-500"
+          >
+            Experience
+          </a>
+          <a
             href="#portfolio"
             className="text-sm font-medium hover:text-emerald-500"
           >
             Portfolio
-          </a>
-          <a
-            href="#testimonial"
-            className="text-sm font-medium hover:text-emerald-500"
-          >
-            Testimonial
           </a>
         </nav>
         <Button variant="outline" className="h-auto px-6 py-2">
@@ -93,7 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-10">
+      <section id="skills" className="container mx-auto px-4 py-10">
         <div className="mb-12">
           <h2 className="text-4xl font-bold mb-6">
             My <span className="text-emerald-500">Tech Stack</span>
@@ -171,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-20 bg-gray-50">
+      <section id="experience" className="container mx-auto px-4 py-20 bg-gray-50">
         <div className="mb-12">
           <h2 className="text-4xl font-bold mb-6">
             Professional <span className="text-emerald-500">Journey</span>
