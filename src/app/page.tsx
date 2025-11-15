@@ -1,16 +1,10 @@
 import {
-  ArrowRightIcon,
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
-  StarIcon,
   TwitterIcon,
 } from "lucide-react";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "../components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
@@ -25,7 +19,8 @@ const iconMap: Record<string, any> = {
 };
 
 export default function Home() {
-  const { name, title, tagline, summary, stats, skills, experience, projects, testimonials, socialLinks } = portfolioData;
+  const { name, title, summary, skills, experience, projects, socialLinks } =
+    portfolioData;
 
   return (
     <div className="w-full min-h-screen bg-white">
@@ -40,10 +35,16 @@ export default function Home() {
           <a href="#" className="text-sm font-medium hover:text-emerald-500">
             Home
           </a>
-          <a href="#portfolio" className="text-sm font-medium hover:text-emerald-500">
+          <a
+            href="#portfolio"
+            className="text-sm font-medium hover:text-emerald-500"
+          >
             Portfolio
           </a>
-          <a href="#testimonial" className="text-sm font-medium hover:text-emerald-500">
+          <a
+            href="#testimonial"
+            className="text-sm font-medium hover:text-emerald-500"
+          >
             Testimonial
           </a>
         </nav>
@@ -52,31 +53,22 @@ export default function Home() {
         </Button>
       </header>
 
-      <section className="container mx-auto px-4 py-20 relative">
+      <section className="container mx-auto px-4 py-10 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-emerald-500 font-medium mb-4">Hi, I am {name}</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              {title}
-            </h1>
-            <p className="text-gray-600 mb-8 max-w-md text-lg">
-              {summary}
+            <p className="text-emerald-500 font-medium mb-4">
+              Hi, I am
+              <br />
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">{name}</h1>
             </p>
-            <div className="flex items-center gap-4">
-              <Button className="bg-emerald-500 hover:bg-emerald-600 h-auto px-6 py-3">
-                Get Started
-              </Button>
-              <button className="flex items-center gap-2 text-sm font-medium hover:text-emerald-500">
-                View Portfolio
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
-            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{title}</h1>
+            <p className="text-gray-600 mb-8 max-w-md text-lg">{summary}</p>
           </div>
           <div className="relative">
             <div className="w-full max-w-md mx-auto">
               <div className="relative bg-emerald-500 rounded-lg overflow-hidden aspect-square">
                 <img
-                  src="/profile-photo.png"
+                  src="/profile-photo.jpg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -101,24 +93,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <Card key={index} className="border-0 shadow-lg">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-4xl font-bold text-emerald-500 mb-2">
-                  {stat.number}
-                </h3>
-                <p className="text-gray-600">{stat.label}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-10">
         <div className="mb-12">
-          <p className="text-emerald-500 font-medium mb-4">Technical Skills</p>
           <h2 className="text-4xl font-bold mb-6">
             My <span className="text-emerald-500">Tech Stack</span>
           </h2>
@@ -126,10 +102,15 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="border-0 shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-emerald-500">Frontend</h3>
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">
+                Frontend
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.frontend.map((skill, index) => (
-                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -138,10 +119,15 @@ export default function Home() {
           </Card>
           <Card className="border-0 shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-emerald-500">Backend</h3>
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">
+                Backend
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.backend.map((skill, index) => (
-                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -150,10 +136,15 @@ export default function Home() {
           </Card>
           <Card className="border-0 shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-emerald-500">Database</h3>
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">
+                Database
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.database.map((skill, index) => (
-                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -162,10 +153,15 @@ export default function Home() {
           </Card>
           <Card className="border-0 shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-emerald-500">DevOps</h3>
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">
+                DevOps
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.devops.map((skill, index) => (
-                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -177,7 +173,6 @@ export default function Home() {
 
       <section className="container mx-auto px-4 py-20 bg-gray-50">
         <div className="mb-12">
-          <p className="text-emerald-500 font-medium mb-4">Experience</p>
           <h2 className="text-4xl font-bold mb-6">
             Professional <span className="text-emerald-500">Journey</span>
           </h2>
@@ -188,9 +183,13 @@ export default function Home() {
               <CardContent className="p-6">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <span className="text-sm text-gray-500 font-medium">{exp.period}</span>
+                  <span className="text-sm text-gray-500 font-medium">
+                    {exp.period}
+                  </span>
                 </div>
-                <p className="text-emerald-600 font-medium mb-3">{exp.company}</p>
+                <p className="text-emerald-600 font-medium mb-3">
+                  {exp.company}
+                </p>
                 <p className="text-gray-600">{exp.description}</p>
               </CardContent>
             </Card>
@@ -200,17 +199,20 @@ export default function Home() {
 
       <section id="portfolio" className="container mx-auto px-4 py-20">
         <div className="mb-12">
-          <p className="text-emerald-500 font-medium mb-4">My Portfolio</p>
           <h2 className="text-4xl font-bold mb-6">
             Featured <span className="text-emerald-500">Projects</span>
           </h2>
           <p className="text-gray-600 max-w-2xl">
-            A collection of full-stack applications showcasing expertise in modern web technologies and scalable architecture.
+            A collection of full-stack applications showcasing expertise in
+            modern web technologies and scalable architecture.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {projects.map((project, index) => (
-            <Card key={index} className="border-0 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <Card
+              key={index}
+              className="border-0 shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+            >
               <div className="bg-gray-100 aspect-video overflow-hidden">
                 <img
                   src={project.image}
@@ -220,10 +222,15 @@ export default function Home() {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                <p className="text-gray-600 text-sm mb-4">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
+                    <span
+                      key={techIndex}
+                      className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -236,44 +243,6 @@ export default function Home() {
           <Button className="bg-emerald-500 hover:bg-emerald-600 h-auto px-6 py-3">
             View More Projects
           </Button>
-        </div>
-      </section>
-
-      <section id="testimonial" className="container mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <p className="text-emerald-500 font-medium mb-4">Testimonial</p>
-          <h2 className="text-4xl font-bold mb-6">
-            What Clients <span className="text-emerald-500">Say</span>
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon
-                      key={i}
-                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm mb-6">{testimonial.text}</p>
-                <div className="flex items-center gap-3">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar} />
-                    <AvatarFallback>
-                      {testimonial.name.charAt(0)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-bold text-sm">{testimonial.name}</p>
-                    <p className="text-gray-500 text-xs">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </section>
 
@@ -346,9 +315,6 @@ export default function Home() {
       <footer className="container mx-auto px-4 py-8 border-t">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-600">© 2024. All Rights Reserved.</p>
-          <p className="text-sm text-gray-600">
-            Designed by <span className="font-medium">Developer Portfolio</span>
-          </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social, index) => {
               const Icon = iconMap[social.platform];
