@@ -81,6 +81,12 @@
   }
 
   body {
+    width: 100vw;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }

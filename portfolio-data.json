@@ -1,38 +1,45 @@
 {
   "name": "Hamid Nawaz",
   "title": "Full-Stack Developer",
-  "summary": "Passionate full-stack developer with expertise in building robust, scalable applications from backend APIs to responsive user interfaces.",
+  "summary": "I build smooth, smart, and user-focused web applications—crafting logic, performance, and design into one experience",
   "email": "john@example.com",
   "socialLinks": [
-    { "platform": "facebook", "url": "#" },
-    { "platform": "twitter", "url": "#" },
-    { "platform": "linkedin", "url": "#" },
-    { "platform": "instagram", "url": "#" }
+    { "platform": "github", "url": "#" },
+    { "platform": "linkedin", "url": "#" }
   ],
   "skills": {
-    "frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Redux"],
-    "backend": ["Node.js", "Express", "Python", "Django", "REST APIs", "GraphQL"],
-    "database": ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase"],
-    "devops": ["Docker", "AWS", "CI/CD", "GitHub Actions", "Kubernetes", "Nginx"]
+    "frontend": [
+      { "name": "JavaScript", "percentage": 85 },
+      { "name": "React", "percentage": 95 },
+      { "name": "Next.js", "percentage": 95 },
+      { "name": "Tailwind CSS", "percentage": 95 },
+      { "name": "Bootstrap CSS", "percentage": 95 }
+    ],
+    "backend": [
+      { "name": "Node.js", "percentage": 93 },
+      { "name": "Express", "percentage": 90 },
+      { "name": "TypeScript", "percentage": 85 },
+      { "name": "Prisma", "percentage": 90 },
+      { "name": "Socket.io", "percentage": 85 }
+    ],
+    "database": [
+      { "name": "PostgreSQL", "percentage": 90 },
+      { "name": "MongoDB", "percentage": 90 },
+      { "name": "MySQL", "percentage": 85 },
+      { "name": "DynamoDB", "percentage": 80 }
+    ],
+    "devops": [
+      { "name": "Docker", "percentage": 80 },
+      { "name": "AWS", "percentage": 85 },
+      { "name": "GitHub Actions", "percentage": 90 }
+    ]
   },
   "experience": [
     {
-      "title": "Senior Full-Stack Developer",
-      "company": "Tech Corp",
-      "period": "2022 - Present",
-      "description": "Led development of microservices architecture and implemented CI/CD pipelines, improving deployment efficiency by 60%."
-    },
-    {
       "title": "Full-Stack Developer",
-      "company": "Digital Solutions",
-      "period": "2020 - 2022",
-      "description": "Developed scalable web applications using React and Node.js, serving over 100K users daily."
-    },
-    {
-      "title": "Backend Developer",
-      "company": "Startup Inc",
-      "period": "2018 - 2020",
-      "description": "Built RESTful APIs and database schemas, optimized query performance by 40%."
+      "company": "Codezac",
+      "period": "2023 - Present",
+      "description": "I’m a Full Stack Developer passionate about building interactive and user-friendly web applications. I work with modern technologies like Next.js and React.js, and I enjoy bringing ideas to life on both the frontend and backend. From creating real-time experiences with Socket.io to managing data efficiently with Node.js, I focus on delivering solutions that are not only functional but also intuitive for users. I love turning complex problems into seamless experiences that people enjoy using."
     }
   ],
   "projects": [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import AosInit from "../components/AosInit";
 
 export const metadata: Metadata = {
   title: "Hamid Nawaz",
@@ -14,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      </head>
+      <body>
+        <AosInit />
+        {children}
+      </body>
     </html>
   );
 }
