@@ -6,87 +6,44 @@ import {
   StarIcon,
   TwitterIcon,
 } from "lucide-react";
-import React from "react";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../components/ui/avatar";
-import { Button } from "../../components/ui/button";
-import { Card, CardContent } from "../../components/ui/card";
-import { Input } from "../../components/ui/input";
-import { Textarea } from "../../components/ui/textarea";
+} from "../components/ui/avatar";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import portfolioData from "../../portfolio-data.json";
 
-const stats = [
-  { number: "80+", label: "Satisfied clients" },
-  { number: "200+", label: "Projects completed" },
-  { number: "99+", label: "Reviews given" },
-];
+const iconMap: Record<string, any> = {
+  facebook: FacebookIcon,
+  twitter: TwitterIcon,
+  linkedin: LinkedinIcon,
+  instagram: InstagramIcon,
+};
 
-const services = [
-  {
-    title: "Visual Design",
-    description: "Create user interface design with unique & modern ideas.",
-  },
-  {
-    title: "Design Prototype",
-    description: "Create advance design prototype with Figma apps.",
-  },
-  {
-    title: "UX Research",
-    description: "Create digital user products with updated ideas.",
-  },
-];
+export default function Home() {
+  const { name, title, tagline, summary, stats, skills, experience, projects, testimonials, socialLinks } = portfolioData;
 
-const testimonials = [
-  {
-    rating: 5,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "John Doe",
-    role: "CEO, Company",
-    avatar: "/avatar1.png",
-  },
-  {
-    rating: 5,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "Jane Smith",
-    role: "Designer",
-    avatar: "/avatar2.png",
-  },
-  {
-    rating: 5,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "Mike Johnson",
-    role: "Developer",
-    avatar: "/avatar3.png",
-  },
-];
-
-const socialLinks = [
-  { icon: FacebookIcon, href: "#" },
-  { icon: TwitterIcon, href: "#" },
-  { icon: LinkedinIcon, href: "#" },
-  { icon: InstagramIcon, href: "#" },
-];
-
-export const PersonalPortfolio = (): JSX.Element => {
   return (
     <div className="w-full min-h-screen bg-white">
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xl">A</span>
+            <span className="text-white font-bold text-xl">D</span>
           </div>
-          <span className="font-bold text-xl">Agency</span>
+          <span className="font-bold text-xl">Developer</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#" className="text-sm font-medium hover:text-emerald-500">
             Home
           </a>
-          <a href="#" className="text-sm font-medium hover:text-emerald-500">
+          <a href="#portfolio" className="text-sm font-medium hover:text-emerald-500">
             Portfolio
           </a>
-          <a href="#" className="text-sm font-medium hover:text-emerald-500">
+          <a href="#testimonial" className="text-sm font-medium hover:text-emerald-500">
             Testimonial
           </a>
         </nav>
@@ -98,15 +55,12 @@ export const PersonalPortfolio = (): JSX.Element => {
       <section className="container mx-auto px-4 py-20 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-emerald-500 font-medium mb-4">Hi, I am</p>
+            <p className="text-emerald-500 font-medium mb-4">Hi, I am {name}</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              I have <span className="text-emerald-500">Creative</span>
-              <br />
-              <span className="text-emerald-500">Design</span> Experience
+              {title}
             </h1>
-            <p className="text-gray-600 mb-8 max-w-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p className="text-gray-600 mb-8 max-w-md text-lg">
+              {summary}
             </p>
             <div className="flex items-center gap-4">
               <Button className="bg-emerald-500 hover:bg-emerald-600 h-auto px-6 py-3">
@@ -132,15 +86,18 @@ export const PersonalPortfolio = (): JSX.Element => {
           </div>
         </div>
         <div className="absolute top-10 right-10 flex flex-col gap-4">
-          {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"
-            >
-              <social.icon className="w-5 h-5" />
-            </a>
-          ))}
+          {socialLinks.map((social, index) => {
+            const Icon = iconMap[social.platform];
+            return (
+              <a
+                key={index}
+                href={social.url}
+                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            );
+          })}
         </div>
       </section>
 
@@ -160,107 +117,133 @@ export const PersonalPortfolio = (): JSX.Element => {
       </section>
 
       <section className="container mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <p className="text-emerald-500 font-medium mb-4">My Intro</p>
-            <h2 className="text-4xl font-bold mb-6">
-              Why Hire Me For Your
-              <br />
-              Next <span className="text-emerald-500">Project?</span>
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-            <Button className="bg-emerald-500 hover:bg-emerald-600 h-auto px-6 py-3">
-              Hire me
-            </Button>
-          </div>
-          <div className="grid gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="mb-12">
+          <p className="text-emerald-500 font-medium mb-4">Technical Skills</p>
+          <h2 className="text-4xl font-bold mb-6">
+            My <span className="text-emerald-500">Tech Stack</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="border-0 shadow-lg">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">Frontend</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.frontend.map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-0 shadow-lg">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">Backend</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.backend.map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-0 shadow-lg">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">Database</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.database.map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-0 shadow-lg">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-4 text-emerald-500">DevOps</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.devops.map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-20 bg-gray-50">
+        <div className="mb-12">
+          <p className="text-emerald-500 font-medium mb-4">Experience</p>
+          <h2 className="text-4xl font-bold mb-6">
+            Professional <span className="text-emerald-500">Journey</span>
+          </h2>
+        </div>
+        <div className="grid gap-6">
+          {experience.map((exp, index) => (
+            <Card key={index} className="border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold">{exp.title}</h3>
+                  <span className="text-sm text-gray-500 font-medium">{exp.period}</span>
+                </div>
+                <p className="text-emerald-600 font-medium mb-3">{exp.company}</p>
+                <p className="text-gray-600">{exp.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section id="portfolio" className="container mx-auto px-4 py-20">
         <div className="mb-12">
           <p className="text-emerald-500 font-medium mb-4">My Portfolio</p>
           <h2 className="text-4xl font-bold mb-6">
-            My Creative Works
-            <br />
-            Latest <span className="text-emerald-500">Projects</span>
+            Featured <span className="text-emerald-500">Projects</span>
           </h2>
           <p className="text-gray-600 max-w-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            A collection of full-stack applications showcasing expertise in modern web technologies and scalable architecture.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-          <div className="col-span-2 row-span-2 bg-gray-100 rounded-lg overflow-hidden aspect-video">
-            <img
-              src="/project1.png"
-              alt="Project 1"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square">
-            <img
-              src="/project2.png"
-              alt="Project 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square">
-            <img
-              src="/project3.png"
-              alt="Project 3"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square">
-            <img
-              src="/project4.png"
-              alt="Project 4"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square">
-            <img
-              src="/project5.png"
-              alt="Project 5"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square">
-            <img
-              src="/project6.png"
-              alt="Project 6"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {projects.map((project, index) => (
+            <Card key={index} className="border-0 shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="bg-gray-100 aspect-video overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         <div className="text-center">
           <Button className="bg-emerald-500 hover:bg-emerald-600 h-auto px-6 py-3">
-            View Portfolio
+            View More Projects
           </Button>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-20">
+      <section id="testimonial" className="container mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <p className="text-emerald-500 font-medium mb-4">Testimonial</p>
           <h2 className="text-4xl font-bold mb-6">
-            Our Customer Say
-            <br />
-            Something <span className="text-emerald-500">About Us</span>
+            What Clients <span className="text-emerald-500">Say</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -364,21 +347,24 @@ export const PersonalPortfolio = (): JSX.Element => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-600">© 2024. All Rights Reserved.</p>
           <p className="text-sm text-gray-600">
-            Designed by <span className="font-medium">Anima Agency</span>
+            Designed by <span className="font-medium">Developer Portfolio</span>
           </p>
           <div className="flex items-center gap-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"
-              >
-                <social.icon className="w-4 h-4" />
-              </a>
-            ))}
+            {socialLinks.map((social, index) => {
+              const Icon = iconMap[social.platform];
+              return (
+                <a
+                  key={index}
+                  href={social.url}
+                  className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white hover:bg-emerald-600 transition-colors"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </footer>
     </div>
   );
-};
+}

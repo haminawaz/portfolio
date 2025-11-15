@@ -1,0 +1,105 @@
+{
+  "name": "John Doe",
+  "title": "Full-Stack Developer",
+  "tagline": "Building scalable web applications with modern technologies and best practices",
+  "summary": "Passionate full-stack developer with expertise in building robust, scalable applications from backend APIs to responsive user interfaces.",
+  "email": "john@example.com",
+  "socialLinks": [
+    { "platform": "facebook", "url": "#" },
+    { "platform": "twitter", "url": "#" },
+    { "platform": "linkedin", "url": "#" },
+    { "platform": "instagram", "url": "#" }
+  ],
+  "stats": [
+    { "number": "80+", "label": "Satisfied clients" },
+    { "number": "200+", "label": "Projects completed" },
+    { "number": "99+", "label": "Reviews given" }
+  ],
+  "skills": {
+    "frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Redux"],
+    "backend": ["Node.js", "Express", "Python", "Django", "REST APIs", "GraphQL"],
+    "database": ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Supabase"],
+    "devops": ["Docker", "AWS", "CI/CD", "GitHub Actions", "Kubernetes", "Nginx"]
+  },
+  "experience": [
+    {
+      "title": "Senior Full-Stack Developer",
+      "company": "Tech Corp",
+      "period": "2022 - Present",
+      "description": "Led development of microservices architecture and implemented CI/CD pipelines, improving deployment efficiency by 60%."
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "Digital Solutions",
+      "period": "2020 - 2022",
+      "description": "Developed scalable web applications using React and Node.js, serving over 100K users daily."
+    },
+    {
+      "title": "Backend Developer",
+      "company": "Startup Inc",
+      "period": "2018 - 2020",
+      "description": "Built RESTful APIs and database schemas, optimized query performance by 40%."
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
+      "technologies": ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
+      "image": "/project1.png"
+    },
+    {
+      "title": "Real-Time Chat Application",
+      "description": "WebSocket-based chat application with file sharing and user authentication.",
+      "technologies": ["React", "Socket.io", "MongoDB", "Express"],
+      "image": "/project2.png"
+    },
+    {
+      "title": "Project Management Tool",
+      "description": "Collaborative project management platform with task tracking and team collaboration features.",
+      "technologies": ["Vue.js", "Django", "PostgreSQL", "Docker"],
+      "image": "/project3.png"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Data visualization dashboard with real-time metrics and reporting capabilities.",
+      "technologies": ["React", "Python", "Redis", "Chart.js"],
+      "image": "/project4.png"
+    },
+    {
+      "title": "API Gateway Service",
+      "description": "Microservices API gateway with rate limiting, authentication, and request routing.",
+      "technologies": ["Node.js", "Docker", "Kubernetes", "Redis"],
+      "image": "/project5.png"
+    },
+    {
+      "title": "Mobile-First PWA",
+      "description": "Progressive web application with offline support and push notifications.",
+      "technologies": ["Next.js", "Service Workers", "IndexedDB"],
+      "image": "/project6.png"
+    }
+  ],
+  "testimonials": [
+    {
+      "rating": 5,
+      "text": "Exceptional developer who delivers high-quality code and innovative solutions. Their full-stack expertise was invaluable to our project.",
+      "name": "Sarah Johnson",
+      "role": "CTO, TechStart",
+      "avatar": "/avatar1.png"
+    },
+    {
+      "rating": 5,
+      "text": "Outstanding technical skills and great communication. Delivered our complex application on time and exceeded expectations.",
+      "name": "Michael Chen",
+      "role": "Product Manager, Digital Corp",
+      "avatar": "/avatar2.png"
+    },
+    {
+      "rating": 5,
+      "text": "A true professional who understands both frontend and backend development. Their DevOps knowledge helped streamline our deployment process.",
+      "name": "Emily Rodriguez",
+      "role": "Engineering Lead, CloudSys",
+      "avatar": "/avatar3.png"
+    }
+  ]
+}
